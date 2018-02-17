@@ -7,6 +7,11 @@ import time
 import csv
 import datetime
 
+"""
+NEED TO THINK ABOUT TAKING DIRECTORY ARGUMENTS
+people cloning in wont want to dev in the clone, taking external directory arg would be good
+"""
+
 
 def dataOrganizer(raw):
     try:
