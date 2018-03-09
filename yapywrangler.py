@@ -42,7 +42,6 @@ def dataOrganizer(raw):
                             each[3].strip('"low":'), 
                             each[4].strip('"close":'), 
                             each[5].strip('"volume":').strip('}]')]
-                #print(buffer)
 
                 #sequence to catch null, nu, na, nan values
                 run = nullCatch(buffer)
