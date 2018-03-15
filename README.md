@@ -6,6 +6,7 @@ Usage:
 
 
 def securityData(symbols, end=None, save=False, epoch=True)
+
     symbols = []
         takes list [] of symbols to pull data for
         note, non-existant symbols are not handled well, working on solution to this.
@@ -18,7 +19,8 @@ def securityData(symbols, end=None, save=False, epoch=True)
 
     returns dictionary with each [symbol] as primary key to list of each days stats
 
-def readExisting(symbols, end=None, epoch=False):
+def readExisting(symbols, end=None, epoch=False)
+
     symbols = []
         takes list [] of symbols to pull data for
         note, non-existant symbols are not handled well, working on solution to this.
