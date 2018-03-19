@@ -36,9 +36,9 @@ returns dictionary with each [symbol] as primary key to list of each days stats
 
 Sample Usage:
 
-data = readExisting(['MSFT'], end='2007-01-01')
+    data = readExisting(['MSFT'], end='2007-01-01')
 
-data2 = collectData(symbols=['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
+    data2 = collectData(['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
 
 output:
     data['MSFT'] = [
