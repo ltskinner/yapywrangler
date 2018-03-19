@@ -43,7 +43,7 @@ Sample Usage:
     data2 = yp.readExisting(['MSFT'], end='2007-01-01') 
 
 output:
-    data['MSFT'] = [
+    data['AMD'] = [
         [date, high, low, open, close, volume], 
         [], 
         [], 
