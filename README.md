@@ -9,7 +9,7 @@ Stock market historical data collection and management system, pulling data from
 Usage:
 
 
-    data = securityData(symbols, end=None, save=False, epoch=True)
+    def securityData(symbols, end=None, save=False, epoch=True)
 
 symbols = [], takes list [] of symbols to pull data for. note, non-existant symbols are not handled well, working on solution to this.
     
@@ -22,7 +22,7 @@ epoch = True, flag to determine if epoch time or YYYY-MM-DD time will be returne
 returns dictionary with each [symbol] as primary key to list of each days stats
 
 
-    data = readExisting(symbols, end=None, epoch=False)
+    def readExisting(symbols, end=None, epoch=False)
 
 symbols = [], takes list [] of symbols to pull data for. note, non-existant symbols are not handled well, working on solution to this.
     
@@ -36,9 +36,11 @@ returns dictionary with each [symbol] as primary key to list of each days stats
 
 Sample Usage:
 
-    data = readExisting(['MSFT'], end='2007-01-01')
+    import yapywrangler as yp
 
-    data2 = collectData(['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
+    data = yp.collectData(['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
+    
+    data2 = yp.readExisting(['MSFT'], end='2007-01-01') 
 
 output:
     data['MSFT'] = [
