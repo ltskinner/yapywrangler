@@ -1,6 +1,6 @@
 # yapywrangler
 
-    pip install yapywrangler
+    $ pip install yapywrangler
     
     
 Stock market historical data collection and management system, pulling data from the updated Yahoo Finance backend, 2018
@@ -9,7 +9,7 @@ Stock market historical data collection and management system, pulling data from
 Usage:
 
 
-    def securityData(symbols, end=None, save=False, epoch=True)
+    securityData(symbols, end=None, save=False, epoch=True)
 
 symbols = [], takes list [] of symbols to pull data for. note, non-existant symbols are not handled well, working on solution to this.
     
@@ -22,7 +22,7 @@ epoch = True, flag to determine if epoch time or YYYY-MM-DD time will be returne
 returns dictionary with each [symbol] as primary key to list of each days stats
 
 
-    def readExisting(symbols, end=None, epoch=False)
+    readExisting(symbols, end=None, epoch=False)
 
 symbols = [], takes list [] of symbols to pull data for. note, non-existant symbols are not handled well, working on solution to this.
     
@@ -42,10 +42,5 @@ Sample Usage:
     
     data2 = yp.readExisting(['MSFT'], end='2007-01-01') 
 
-output:
-    data['AMD'] = [
-        [date, high, low, open, close, volume], 
-        [], 
-        [], 
-        []
-    ]
+    print(data['AMD'])
+    # [ [date, high, low, open, close, volume], [], [], [] ]
