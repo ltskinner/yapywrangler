@@ -38,7 +38,7 @@ Sample Usage:
 
     import yapywrangler as yp
 
-    data = yp.securityData(['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
+    data = yp.collectData(['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
     
     data2 = yp.readExisting(['MSFT'], end='2007-01-01') 
 
