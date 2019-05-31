@@ -26,8 +26,8 @@ Due to this, yapywrangler has been revised to include just its core request func
     msft = pd.DataFrame(data)
     
 ### Default Args
-> start_date: 2000-01-01
-> end_date: now
+     start_date: 2000-01-01
+     end_date: now
 
 ### Data Format:
 
