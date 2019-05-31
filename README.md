@@ -1,46 +1,41 @@
 # yapywrangler
 
-    $ pip install yapywrangler
+### Update 05/31/2019:
+This package was initally released over a year ago in the wake of Yahoo Finance updating their backend API.
+At that time, the only means of retrieving data required gnarly parsing and took noticable time to process.
+Because of this, on the initial release, a local file system for caching parts of retrieved files was used 
+to cut down on processing time.
+
+Since then, Yahoo Finance has revised their API resulting in much faster response times, and negating the 
+for the caching system.
+
+Due to this, yapywrangler has been revised to include just its core request functionality.
+
+
+## Install:
+
+    pip install yapywrangler
     
+
+## Usage:
     
-Stock market historical data collection and management system, pulling data from the updated Yahoo Finance backend, 2018
-
-
-Usage:
-
-
-    securityData(symbols, end=None, save=False, epoch=True)
-
-symbols = [], takes list [] of symbols to pull data for. note, non-existant symbols are not handled well, working on solution to this.
+    from yapywrangler import get_yahoo_data
     
-end = 'YYYY-MM-DD', specifies the furthest back day to look, defaults to 2000-01-01
-    
-save = False, optional flag for whether to save the downloaded data for later use in readExisting()
-    
-epoch = True, flag to determine if epoch time or YYYY-MM-DD time will be returned to user
-    
-returns dictionary with each [symbol] as primary key to list of each days stats
+    stock_ticker = "MSFT"
+    data = get_yahoo_data(stock_ticker, start_date='2006-03-26', end_date='2019-05-29')
+    msft = pd.DataFrame(data)
 
+### Data Format:
 
-    readExisting(symbols, end=None, epoch=False)
+    {
+        'timestamp': [1559136600, 1559223000, 1559321620], 
+        'date': ['2019-05-29', '2019-05-30', '2019-05-31'], 
+        'open': [29.0, 28.399999618530273, 27.56999969482422], 
+        'high': [29.31999969482422, 28.559999465942383, 28.360000610351562], 
+        'low': [27.729999542236328, 27.600000381469727, 27.5], 
+        'close': [28.09000015258789, 28.030000686645508, 27.940000534057617], 
+        'volume': [99969600, 65072900, 40126715]
+    }
 
-symbols = [], takes list [] of symbols to pull data for. note, non-existant symbols are not handled well, working on solution to this.
-    
-end = 'YYYY-MM-DD', specifies the furthest back day to look, defaults to 2000-01-01
-    
-epoch = True, flag to determine if epoch time or YYYY-MM-DD time will be returned to user
-    
-returns dictionary with each [symbol] as primary key to list of each days stats
-
---------------------------------------------------------------------------------------------------
-
-Sample Usage:
-
-    import yapywrangler as yp
-
-    data = yp.securityData(['ADBE', 'AMD'], end='2010-01-01', save=True, epoch=False)
-    
-    data2 = yp.readExisting(['MSFT'], end='2007-01-01') 
-
-    print(data['AMD'])
-    # [ [date, high, low, open, close, volume], [], [], [] ]
+Data structure preferences are very personal and project specific, so returned data is in a generic
+dictionary format. 
