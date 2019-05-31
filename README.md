@@ -25,8 +25,9 @@ Due to this, yapywrangler has been revised to include just its core request func
     data = get_yahoo_data(stock_ticker, start_date='2006-03-26', end_date='2019-05-29')
     msft = pd.DataFrame(data)
     
-* start_date defaults to 2000-01-01
-* end_date defaults to now
+### Default Args
+start_date: 2000-01-01
+end_date: now
 
 ### Data Format:
 
@@ -40,5 +41,3 @@ Due to this, yapywrangler has been revised to include just its core request func
         'volume': [99969600, 65072900, 40126715]
     }
 
-Data structure preferences are very personal and project specific, so returned data is in a generic
-dictionary format. 
