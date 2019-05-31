@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='yapywrangler',
       version='1.1',
-      description='Collects historical finance data from Yahoo Finance',
+      description='Tool for reqesting stock data from the Yahoo Finance API',
       url='https://github.com/ltskinner/yapywrangler',
       author='ltskinner',
       license='MIT',
