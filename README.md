@@ -7,7 +7,7 @@ Because of this, on the initial release, a local file system for caching parts o
 to cut down on processing time.
 
 Since then, Yahoo Finance has revised their API resulting in much faster response times, and negating the 
-for the caching system.
+need for the caching system.
 
 Due to this, yapywrangler has been revised to include just its core request functionality.
 
