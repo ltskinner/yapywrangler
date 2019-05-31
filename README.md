@@ -25,8 +25,8 @@ Due to this, yapywrangler has been revised to include just its core request func
     data = get_yahoo_data(stock_ticker, start_date='2006-03-26', end_date='2019-05-29')
     msft = pd.DataFrame(data)
     
-start_date defaults to 2000-01-01
-end_date defaults to now
+* start_date defaults to 2000-01-01
+* end_date defaults to now
 
 ### Data Format:
 
