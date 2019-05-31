@@ -6,7 +6,7 @@ At that time, the only means of retrieving data required gnarly parsing and took
 Because of this, on the initial release, a local file system for caching parts of retrieved files was used 
 to cut down on processing time.
 
-Since then, Yahoo Finance has revised their API resulting in much faster response times, and negating the 
+Since then, Yahoo Finance has updated their API resulting in much faster response times, and negating the 
 need for the caching system.
 
 Due to this, yapywrangler has been revised to include just its core request functionality.
@@ -26,8 +26,8 @@ Due to this, yapywrangler has been revised to include just its core request func
     msft = pd.DataFrame(data)
     
 ### Default Args
-start_date: 2000-01-01
-end_date: now
+> start_date: 2000-01-01
+> end_date: now
 
 ### Data Format:
 
