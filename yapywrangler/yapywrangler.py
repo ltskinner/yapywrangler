@@ -27,7 +27,7 @@ def get_yahoo_data(stock_symbol, start_date=None, end_date=None):
     if end_date is None:
         now_time = int(time.time())
     else:
-        far_back_time = convert_date_to_epoch(end_date)
+        now_time = convert_date_to_epoch(end_date)
 
     url = create_request_url(stock_symbol, far_back_time, now_time)
     response = requests.get(url)
