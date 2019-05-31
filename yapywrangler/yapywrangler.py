@@ -12,8 +12,8 @@ def get_yahoo_data(stock_symbol, start_date=None, end_date=None):
     """ Requests and formats data from Yahoo Finance API
 
     Args:
-        start_date: the furthest date back
-        end_date: the closest date to now
+        start_date: optional, the furthest date back
+        end_date: optional, the closest date to now
 
     Returns:
         dictionary of results
@@ -32,11 +32,7 @@ def get_yahoo_data(stock_symbol, start_date=None, end_date=None):
     url = create_request_url(stock_symbol, far_back_time, now_time)
     response = requests.get(url)
 
-    stock_data = unpack_json_to_dict(response.json())
-    results = {
-        stock_symbol: stock_data
-    }
-    return results
+    return unpack_json_to_dict(response.json())
 
 
 def create_request_url(sym, far_epoch_time, close_epoch_time):
